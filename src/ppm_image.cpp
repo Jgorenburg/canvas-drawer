@@ -17,7 +17,7 @@ ppm_image::ppm_image(int width, int height) : myWidth(width), myHeight(height)
 
 ppm_image::ppm_image(const ppm_image& orig)
 {
-    cout << "not implemented\n";
+    cout << "not implemeted\n";
 }
 
 ppm_image& ppm_image::operator=(const ppm_image& orig)
