@@ -9,6 +9,60 @@ using namespace agl;
 
 int main(int argc, char** argv)
 {
+	canvas drawer(640, 380);
+	// your code here
+
+	drawer.background(0, 0, 0);
+	
+
+	drawer.begin(UNDEFINED);
+	drawer.fill();
+	drawer.setBorder(255, 255, 255);
+	drawer.color(255, 255, 255);
+	drawer.vertex(100, 190);
+	drawer.color(255, 255, 255);
+	drawer.vertex(100, 90);
+
+	drawer.fill();
+	drawer.setBorder(255, 255, 255);
+	drawer.color(255, 255, 0);
+	drawer.vertex(300, 190);
+	drawer.color(0, 255, 255);
+	drawer.vertex(200, 90);
+
+	drawer.fill();
+	drawer.color(255, 0, 0);
+	drawer.vertex(400, 190);
+	drawer.setBorder(0, 100, 255);
+	drawer.vertex(400, 210);
+
+	drawer.fill();
+	drawer.color(0, 255, 0);
+	drawer.vertex(500, 310);
+	drawer.color(255, 0, 255);
+	drawer.vertex(380, 310);
+
+	drawer.end();
+
+
+
+
+	
+	drawer.save("test.png");
+	
+}
+
+/*#define _USE_MATH_DEFINES
+
+#include <iostream>
+#include <map>
+#include "canvas.h"
+#include <math.h>
+using namespace std;
+using namespace agl;
+
+int main(int argc, char** argv)
+{
 	canvas drawer(1100, 1100);
 	// your code here
 
@@ -68,3 +122,4 @@ int main(int argc, char** argv)
 	
 }
 
+*/

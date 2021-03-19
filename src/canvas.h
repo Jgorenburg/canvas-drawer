@@ -83,7 +83,6 @@ namespace agl
       // takes an int corrosponding to the number of vertices in the shape
       // draws triangles between every set of two adjacent vertices and the first vertex
       // with the fill, and outline of the first vertex
-      // only works for convex shapes
       // if only 2 vertices, draws a line
       // if only 1, a point
       // if none, do nothing

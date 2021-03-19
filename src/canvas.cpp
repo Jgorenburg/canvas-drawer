@@ -354,7 +354,7 @@ void canvas::drawCircle(int c, int p) {
 			// if radius == 0, the only colored point should be the center
 			float dist = sqrt(pow(i - center[1], 2) + pow(j - center[0], 2));
 			float distRatio = dist;
-			if (radius != 0) { distRatio = floor(dist / radius); }
+			if (radius != 0) { distRatio = dist / radius; }
 			if (distRatio <= 1) {
 				// the formula for interpolation is not linear
 				// instead it is based on area
@@ -365,14 +365,12 @@ void canvas::drawCircle(int c, int p) {
 				int b = colorp.b * colorRatio + colorc.b * (1 - colorRatio);
 				ppm_pixel rgb{ static_cast<unsigned char>(r),static_cast<unsigned char>(g),static_cast<unsigned char>(b) };
 				
-				bool colorIn = shouldFill;
-				if (shouldOutline && ceil(radius) == ceil(dist)) {
-					rgb = borderColor;
-					colorIn = true;
-				}
-				if (colorIn) {
+				if (shouldFill) {
 					_canvas.set(i, j, rgb);
 				}
+			}
+			if (shouldOutline && ceil(radius) == ceil(dist)) {
+				_canvas.set(i, j, borderColor);
 			}
 		}
 	}
